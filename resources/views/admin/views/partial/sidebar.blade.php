@@ -46,7 +46,7 @@
                 <ul class="nav nav-treeview">
                   @if(auth()->user()->can('View User'))
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="{{route('user.index')}}" class="nav-link {{request()->is('user') ? 'active' : ''}}">
                           <i class="far fa-circle nav-icon"></i>
                           <p>User List</p>
                       </a>
@@ -55,7 +55,7 @@
 
                   @if(auth()->user()->can('Create User'))
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="{{route('user.create')}}" class="nav-link {{request()->is('user/create') ? 'active' : ''}}">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Add User</p>
                       </a>
@@ -68,7 +68,7 @@
 
 
             @if(auth()->user()->can('Edit Role') || auth()->user()->can('View Role') || auth()->user()->can('Create Role') || auth()->user()->can('Delete Role'))
-              <li class="nav-item {{request()->is('user*') ? 'menu-open' : ''}}">
+              <li class="nav-item {{request()->is('role*') ? 'menu-open' : ''}}">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-cog"></i>
                     <p>
@@ -79,7 +79,7 @@
                 <ul class="nav nav-treeview">
                   @if(auth()->user()->can('View Role'))
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="{{route('role.index')}}" class="nav-link {{request()->is('role') ? 'active' : ''}}">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Role List</p>
                       </a>
@@ -88,7 +88,7 @@
 
                   @if(auth()->user()->can('Create Role'))
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="{{route('role.create')}}" class="nav-link {{request()->is('role/create') ? 'active' : ''}}">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Add Role</p>
                       </a>

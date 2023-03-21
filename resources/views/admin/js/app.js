@@ -14,13 +14,14 @@ import '~admin-lte/dist/js/adminlte.min.js';
 
 
 import store from "./store/index";
+import ExampleComponent from './components/ExampleComponent.vue';
 
 import { createApp } from "vue/dist/vue.esm-bundler";
 
 
 const app = createApp({
     components:{
-        
+        ExampleComponent
     }
 });
 
